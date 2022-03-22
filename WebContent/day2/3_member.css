@@ -1,0 +1,44 @@
+table{
+    border-top: 3px solid gray;
+    border-bottom: 3px solid gray;
+}
+
+td{
+    padding: 10px;
+    /* border: 1px dashed gray; */   /* 완성하면 지우세요. 가이드선. */
+}
+input,select{
+    padding: 6px;
+    border-radius: 4px;
+    border: 2px solid #ccc;
+}
+input[type=text],input[type=password],input[type=email]{
+    width: 70%;    /* 부모 태그 td너비의 70% */
+}
+input[type=number]{
+    width: 20%;
+}
+
+label.title{
+    display: inline-block;  /* label 태그에는 너비가 적용안됩니다.(block요소가 아님)-> 너비가 적용되도록 합니다. */
+    padding: 10px;
+    width: 70%;
+    background-color: #c69 ;
+    border-radius: 4px;
+    text-align: center;
+    color:white;
+}
+button{
+    padding: 7px 15px;
+    margin: 7px;
+    background-color: rgb(194, 14, 104);
+    border: none;
+    color: white;
+    font-size: 1.1em;
+    cursor: pointer;
+    border-radius: 4px;
+}
+/* 선택자 : 마우스가 놓여질때 변경될 css */
+button:hover{
+    background-color: rgb(75, 2, 39);
+}
