@@ -21,7 +21,6 @@
 		<%    	//request 객체로 전달되는 인코딩 형식 설정.
 				request.setCharacterEncoding("UTF-8"); //이 명령 없으면 아래 결과는 null %>
 		<li>문자 인코딩 형식 : <%= request.getCharacterEncoding() %></li>
-		<li></li>
 	</ul>
 	<!-- 출력 IPv4 설정 : Run -> Run Configurations -> tomcat -> Arguments -> VM Arguments 에 입력
 								-Djava.net.preferIPv4Stack=true -->
