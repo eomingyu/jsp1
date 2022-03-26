@@ -44,6 +44,9 @@
 
 				<!-- disabled 설정되어 있으면 파라미터로 값 전달 안됩니다. -->
 				<input type="hidden" name="num" value="<%=member.getCustNo()%>">
+				<!-- hidden 대신 다른 방법 readonly 속성
+					입력불가를 표현하기 위한 css가 필요합니다.
+				 -->
 				<table style="width: 70%; margin: auto;">
 					<tr>
 						<td class="col1_title">회원번호</td>

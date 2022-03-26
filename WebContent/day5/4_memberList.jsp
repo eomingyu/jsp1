@@ -25,10 +25,34 @@
 	    </nav>
 	    <section>
 <%
+	String find = request.getParameter("search");
+
 	HrdMemberDao dao = HrdMemberDao.getInstance();
-	List<HrdMember> list = dao.selectAll();
+	List<HrdMember> list = null;
+	if(find ==null || find.length() ==0)
+		list = dao.selectAll();			//전체 리스트
+	else	//파라미터 있을 때
+		list = dao.searchName(find);	//이름으로 조회한 리스트
+	String col = request.getParameter("column");
+	
+			
 %>
 			<h3 style="text-align: center;">회원 목록 조회/수정</h3>
+			<div>
+				<form action="4_memberList.jsp">
+					<select name="column">
+						<option value="a">이름</option>
+						<option value="b">주소</option>
+						<option value="c">고객등급</option>
+						<option value="d">거주지역</option>
+					</select>
+					<input name="search" placeholder="검색할 이름 입력">
+					<button>검색</button>
+					<button type="button" onclick="location.href='4_memberList.jsp'">전체보기</button>
+				</form>
+			</div>
+
+		
 			<table style="width:70%;margin:auto; text-align: center;">
 				<tr>
 					<th>회원번호</th>
@@ -40,7 +64,8 @@
 					<th>거주지역</th>
 				</tr>
 			<% 
-				for(HrdMember p : list){
+				if(list.size()!=0){
+				  for(HrdMember p : list){
 			%>
 				<tr>
 					<td><a id="custno" href="5_updateForm.jsp?num=<%= p.getCustNo() %>"><%= p.getCustNo() %></a></td>
@@ -65,6 +90,13 @@
 					<td><%= p.getCity() %></td>
 				</tr>
 			
+			<%
+				  }
+				}else{
+			%>
+				<tr>
+					<td colspan="7">조회 결과가 없습니다.</td>
+				</tr>
 			<%
 				}
 			%>

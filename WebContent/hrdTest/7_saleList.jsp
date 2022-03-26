@@ -1,4 +1,4 @@
-<%@page import="koreait.dao.HrdMemberDao"%>
+<%@page import="koreait.dao.HrdSaleDao"%>
 <%@page import="java.util.List"%>
 <%@page import="koreait.vo.SaleSum"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -25,7 +25,7 @@
 		</nav>
 		<section>
 			<%
-			HrdMemberDao dao = HrdMemberDao.getInstance();
+			HrdSaleDao dao = HrdSaleDao.getInstance();
 			List<SaleSum> list = dao.selectSale();
 			%>
 			<h3 style="text-align:center;">회원 매출 조회</h3>
