@@ -171,10 +171,10 @@ public class HrdMemberDao {
 		String sql = "select * from member_tbl_02";
 		switch(col) {
 		case "a":
-			sql+=" where custname=?";
+			sql+=" where custname like '%'||?||'%'";
 			break;
 		case "b":
-			sql+=" where address=?";
+			sql+=" where address like '%'||?||'%'";
 			break;
 		case "c":
 			sql+=" where grade=?";

@@ -19,17 +19,17 @@
 		String phone = request.getParameter("tel");
 		String address = request.getParameter("addr");
 		String city = request.getParameter("city_code");
-		out.print(custno);
+		/* out.print(custno);
 		out.print("<br>");
 		out.print(address);
-		out.print("<br>");
+		out.print("<br>"); */
 			
 		HrdMember member = new HrdMember();
 		member.setPhone(phone);
 		member.setAddress(address);
 		member.setCity(city);
 		member.setCustNo(custno);
-		out.print(member);
+		//out.print(member);
 		
 		HrdMemberDao dao = HrdMemberDao.getInstance();
 		dao.update(member);
